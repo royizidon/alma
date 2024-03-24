@@ -1,11 +1,4 @@
 
-pip install dash
-
-pip install dash-renderer
-
-
-!pip install dash_html_components
-!pip install dash_core_components
 
 import dash
 from dash import dcc
