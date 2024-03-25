@@ -38,6 +38,7 @@
         .blog {
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.5);
+            font-size: 14px; /* Adjust font size as needed */
         }
     </style>
 </head>
@@ -59,34 +60,7 @@
                     <p>This is a sample blog post related to the second figure.</p>
                 </div>
             </div>
-            <div class="grid-item">
-                <div class="plotly-figure" id="figure3"></div>
-                <div class="blog">
-                    <h2>Blog Title</h2>
-                    <p>This is a sample blog post related to the third figure.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="plotly-figure" id="figure4"></div>
-                <div class="blog">
-                    <h2>Blog Title</h2>
-                    <p>This is a sample blog post related to the fourth figure.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="plotly-figure" id="figure5"></div>
-                <div class="blog">
-                    <h2>Blog Title</h2>
-                    <p>This is a sample blog post related to the fifth figure.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="plotly-figure" id="figure6"></div>
-                <div class="blog">
-                    <h2>Blog Title</h2>
-                    <p>This is a sample blog post related to the sixth figure.</p>
-                </div>
-            </div>
+            <!-- Add more grid items as needed -->
         </div>
     </div>
 
@@ -112,36 +86,6 @@
             name: 'Figure 2',
         };
 
-        var trace3 = {
-            x: ['A', 'B', 'C', 'D', 'E'],
-            y: [12, 9, 15, 12, 10],
-            type: 'bar',
-            name: 'Figure 3',
-        };
-
-        var trace4 = {
-            labels: ['A', 'B', 'C', 'D', 'E'],
-            values: [10, 20, 15, 30, 10],
-            type: 'pie',
-            name: 'Figure 4',
-        };
-
-        var trace5 = {
-            x: [1, 2, 3, 4, 5],
-            y: [5, 10, 8, 12, 6],
-            type: 'scatter',
-            mode: 'lines+markers',
-            name: 'Figure 5',
-        };
-
-        var trace6 = {
-            x: [1, 2, 3, 4, 5],
-            y: [9, 3, 7, 2, 11],
-            type: 'scatter',
-            mode: 'lines+markers',
-            name: 'Figure 6',
-        };
-
         // Layout options for Plotly figures
         var layout = {
             title: '',
@@ -152,10 +96,7 @@
         // Generate Plotly figures
         Plotly.newPlot('figure1', [trace1], layout);
         Plotly.newPlot('figure2', [trace2], layout);
-        Plotly.newPlot('figure3', [trace3], layout);
-        Plotly.newPlot('figure4', [trace4], layout);
-        Plotly.newPlot('figure5', [trace5], layout);
-        Plotly.newPlot('figure6', [trace6], layout);
+        // Add more Plotly figures as needed
     </script>
 </body>
 </html>
