@@ -10,6 +10,7 @@
             background-repeat: no-repeat;
             margin: 0;
             padding: 0;
+            color: white;
         }
         .container {
             max-width: 1200px;
@@ -22,7 +23,7 @@
             gap: 20px;
         }
         .grid-item {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -34,29 +35,57 @@
         .plotly-figure:hover {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
+        .blog {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="text-align: center; padding: 20px; color: white;">Nice Plotly Figures</h1>
+        <h1 style="text-align: center; padding: 20px;">Nice Plotly Figures</h1>
         <div class="grid-container">
             <div class="grid-item">
                 <div class="plotly-figure" id="figure1"></div>
+                <div class="blog">
+                    <h2>Blog Title</h2>
+                    <p>This is a sample blog post related to the first figure.</p>
+                </div>
             </div>
             <div class="grid-item">
                 <div class="plotly-figure" id="figure2"></div>
+                <div class="blog">
+                    <h2>Blog Title</h2>
+                    <p>This is a sample blog post related to the second figure.</p>
+                </div>
             </div>
             <div class="grid-item">
                 <div class="plotly-figure" id="figure3"></div>
+                <div class="blog">
+                    <h2>Blog Title</h2>
+                    <p>This is a sample blog post related to the third figure.</p>
+                </div>
             </div>
             <div class="grid-item">
                 <div class="plotly-figure" id="figure4"></div>
+                <div class="blog">
+                    <h2>Blog Title</h2>
+                    <p>This is a sample blog post related to the fourth figure.</p>
+                </div>
             </div>
             <div class="grid-item">
                 <div class="plotly-figure" id="figure5"></div>
+                <div class="blog">
+                    <h2>Blog Title</h2>
+                    <p>This is a sample blog post related to the fifth figure.</p>
+                </div>
             </div>
             <div class="grid-item">
                 <div class="plotly-figure" id="figure6"></div>
+                <div class="blog">
+                    <h2>Blog Title</h2>
+                    <p>This is a sample blog post related to the sixth figure.</p>
+                </div>
             </div>
         </div>
     </div>
