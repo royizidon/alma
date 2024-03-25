@@ -1,54 +1,40 @@
+import plotly.graph_objs as go
+from plotly.subplots import make_subplots
 
+# Generate Plotly figures
+fig1 = go.Figure(go.Scatter(x=[1, 2, 3], y=[4, 5, 6], mode='lines', name='Figure 1'))
+fig2 = go.Figure(go.Bar(x=['A', 'B', 'C'], y=[10, 20, 30], name='Figure 2'))
+fig3 = go.Figure(go.Pie(labels=['A', 'B', 'C'], values=[40, 30, 20], name='Figure 3'))
+fig4 = go.Figure(go.Scatter(x=[1, 2, 3], y=[10, 5, 8], mode='markers', name='Figure 4'))
 
-import dash
-from dash import dcc
-from dash import html
+# Create subplots
+fig = make_subplots(rows=2, cols=2, subplot_titles=("Figure 1", "Figure 2", "Figure 3", "Figure 4"))
+fig.add_trace(fig1.data[0], row=1, col=1)
+fig.add_trace(fig2.data[0], row=1, col=2)
+fig.add_trace(fig3.data[0], row=2, col=1)
+fig.add_trace(fig4.data[0], row=2, col=2)
 
-import dash
-from dash import dcc, html
-from dash.dependencies import Input, Output
+# Update layout
+fig.update_layout(title_text="Plotly Figures", showlegend=False)
 
-app = dash.Dash(__name__)
+# Convert the figure to HTML
+fig_html = fig.to_html(full_html=False)
 
-# Sample data for the list of lists
-list_of_lists = [
-    {"name": "List 1", "items": ["Item 1.1", "Item 1.2", "Item 1.3"]},
-    {"name": "List 2", "items": ["Item 2.1", "Item 2.2", "Item 2.3"]},
-    {"name": "List 3", "items": ["Item 3.1", "Item 3.2", "Item 3.3"]}
-]
+# Create HTML file content
+html_content = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotly Figures</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Plotly Figures</h1>
+    {fig_html}
+</body>
+</html>
+"""
 
-# Define main list items as checkboxes
-main_list_items = dcc.Checklist(
-    id='main-list',
-    options=[{'label': list_item['name'], 'value': list_item['name']} for list_item in list_of_lists]
-)
-
-# Define child lists initially hidden
-child_lists = [html.Ul(id=f'list-{i}', style={'display': 'none'}) for i in range(len(list_of_lists))]
-
-# Define app layout
-app.layout = html.Div([
-    html.H1("Collapsible List of Lists Example"),
-    main_list_items,
-    *child_lists
-])
-
-# Callback to show/hide child lists based on main list item selection
-@app.callback(
-    Output('list-0', 'style'),
-    Output('list-1', 'style'),
-    Output('list-2', 'style'),
-    [Input('main-list', 'value')]
-)
-def toggle_child_lists(selected_items):
-    styles = [{'display': 'none'} for _ in range(len(list_of_lists))]
-    if selected_items:
-        for item in selected_items:
-            index = next((i for i, list_item in enumerate(list_of_lists) if list_item['name'] == item), None)
-            if index is not None:
-                styles[index] = {'display': 'block'}
-    return styles[0], styles[1], styles[2]
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
-
+# Write the HTML content to a file
+with open('index.html', 'w') as f:
+    f.write(html_content)
