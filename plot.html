@@ -5,15 +5,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-image: url('https://example.com/background-image.jpg'); /* Replace 'https://example.com/background-image.jpg' with the URL of your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px;
         }
         .grid-item {
             background-color: #fff;
@@ -31,19 +37,28 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center; padding: 20px;">Nice Plotly Figures</h1>
-    <div class="grid-container">
-        <div class="grid-item">
-            <div class="plotly-figure" id="figure1"></div>
-        </div>
-        <div class="grid-item">
-            <div class="plotly-figure" id="figure2"></div>
-        </div>
-        <div class="grid-item">
-            <div class="plotly-figure" id="figure3"></div>
-        </div>
-        <div class="grid-item">
-            <div class="plotly-figure" id="figure4"></div>
+    <div class="container">
+        <h1 style="text-align: center; padding: 20px;">Nice Plotly Figures</h1>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="plotly-figure" id="figure1"></div>
+            </div>
+            <div class="grid-item">
+                <div class="plotly-figure" id="figure2"></div>
+            </div>
+            <div class="grid-item">
+                <div class="plotly-figure" id="figure3"></div>
+            </div>
+            <div class="grid-item">
+                <div class="plotly-figure" id="figure4"></div>
+            </div>
+            <div class="grid-item">
+                <div class="plotly-figure" id="figure5"></div>
+            </div>
+            <div class="grid-item">
+                <div class="plotly-figure" id="figure6"></div>
+            </div>
+            <!-- Add more grid items as needed -->
         </div>
     </div>
 
@@ -61,27 +76,7 @@
             name: 'Figure 1',
         };
 
-        var trace2 = {
-            x: [1, 2, 3, 4, 5],
-            y: [16, 5, 11, 9, 12],
-            type: 'scatter',
-            mode: 'lines+markers',
-            name: 'Figure 2',
-        };
-
-        var trace3 = {
-            x: ['A', 'B', 'C', 'D', 'E'],
-            y: [12, 9, 15, 12, 10],
-            type: 'bar',
-            name: 'Figure 3',
-        };
-
-        var trace4 = {
-            labels: ['A', 'B', 'C', 'D', 'E'],
-            values: [10, 20, 15, 30, 10],
-            type: 'pie',
-            name: 'Figure 4',
-        };
+        // Add more traces as needed
 
         // Layout options for Plotly figures
         var layout = {
@@ -92,9 +87,7 @@
 
         // Generate Plotly figures
         Plotly.newPlot('figure1', [trace1], layout);
-        Plotly.newPlot('figure2', [trace2], layout);
-        Plotly.newPlot('figure3', [trace3], layout);
-        Plotly.newPlot('figure4', [trace4], layout);
+        // Generate more Plotly figures as needed
     </script>
 </body>
 </html>
