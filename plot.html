@@ -29,7 +29,7 @@
         }
         .plotly-figure {
             width: 100%;
-            height: 300px; /* Adjust height as needed */
+            height: 200px; /* Adjust height as needed */
         }
         .plotly-figure:hover {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -38,7 +38,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 style="text-align: center; padding: 20px;">Nice Plotly Figures</h1>
+        <h1 style="text-align: center; padding: 20px; color: white;">Nice Plotly Figures</h1>
         <div class="grid-container">
             <div class="grid-item">
                 <div class="plotly-figure" id="figure1"></div>
@@ -58,7 +58,6 @@
             <div class="grid-item">
                 <div class="plotly-figure" id="figure6"></div>
             </div>
-            <!-- Add more grid items as needed -->
         </div>
     </div>
 
@@ -76,7 +75,43 @@
             name: 'Figure 1',
         };
 
-        // Add more traces as needed
+        var trace2 = {
+            x: [1, 2, 3, 4, 5],
+            y: [16, 5, 11, 9, 12],
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Figure 2',
+        };
+
+        var trace3 = {
+            x: ['A', 'B', 'C', 'D', 'E'],
+            y: [12, 9, 15, 12, 10],
+            type: 'bar',
+            name: 'Figure 3',
+        };
+
+        var trace4 = {
+            labels: ['A', 'B', 'C', 'D', 'E'],
+            values: [10, 20, 15, 30, 10],
+            type: 'pie',
+            name: 'Figure 4',
+        };
+
+        var trace5 = {
+            x: [1, 2, 3, 4, 5],
+            y: [5, 10, 8, 12, 6],
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Figure 5',
+        };
+
+        var trace6 = {
+            x: [1, 2, 3, 4, 5],
+            y: [9, 3, 7, 2, 11],
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Figure 6',
+        };
 
         // Layout options for Plotly figures
         var layout = {
@@ -87,7 +122,11 @@
 
         // Generate Plotly figures
         Plotly.newPlot('figure1', [trace1], layout);
-        // Generate more Plotly figures as needed
+        Plotly.newPlot('figure2', [trace2], layout);
+        Plotly.newPlot('figure3', [trace3], layout);
+        Plotly.newPlot('figure4', [trace4], layout);
+        Plotly.newPlot('figure5', [trace5], layout);
+        Plotly.newPlot('figure6', [trace6], layout);
     </script>
 </body>
 </html>
