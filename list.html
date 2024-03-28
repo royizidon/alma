@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Lists</title>
+    <style>
+        .nested-list {
+            display: none;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><span class="toggle">talmud</span>
+        <ul class="nested-list">
+            <li>bably</li>
+            <li>yerushalme</li>
+        </ul>
+    </li>
+    <li><span class="toggle">tannai</span>
+        <ul class="nested-list">
+            <li>mishana</li>
+            <li>tosefta</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    document.querySelectorAll('.toggle').forEach(item => {
+        item.addEventListener('click', function() {
+            var nestedList = this.nextElementSibling;
+            if (nestedList.style.display === "none") {
+                nestedList.style.display = "block";
+            } else {
+                nestedList.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
