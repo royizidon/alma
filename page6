@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אפליקציית מיפוי</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJmj6IndwhvusmWkmnqmiwZ0cIWc9gUJZolA&s') no-repeat center center/cover; /* Replace with your map image URL */
+            direction: rtl;
+            color: #ffffff;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 700px;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ddd;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background: linear-gradient(90deg, #43cea2, #185a9d);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #185a9d, #43cea2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .logos img {
+            height: 80px; /* Increased the height for larger logos */
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ברוכים הבאים לאתר מיפוי הנתונים הארכיזואולוגים של ישראל</h1>
+        <p>גלה מקומות חדשים וגלה את העולם מסביבך בעזרת האפליקציה המדהימה שלנו.</p>
+        <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%9E%D7%A4%D7%AA-%D7%90%D7%AA%D7%A8%D7%99%D7%9D/?draft=true" class="btn">התחל עכשיו</a>
+    </div>
+    <div class="logos">
+        <img src="https://service.israntique.org.il/images/top_antiq_logo.svg" alt="Logo 1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Haifa_logo_official_apperence_dark_%28cropped%29.png" alt="Logo 2">
+        <img src="https://conservation.haifa.ac.il/images/samc_logo.png" alt="Logo 3">
+    </div>
+    <footer>
+        &copy; 2024 אפליקציית מיפוי. כל הזכויות שמורות.
+    </footer>
+</body>
+</html>
