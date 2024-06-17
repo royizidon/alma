@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> חקר הארכיאולוגיה בישראל</title>
@@ -28,6 +29,35 @@
             color: inherit;
             text-decoration: none;
         }
+        header {
+    background: linear-gradient(135deg, #56ccf2, #2f80ed);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-button {
+    background-color: #fff;
+    color: #2f80ed;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 20px; /* Adjust spacing as needed */
+}
+
+.header-button a {
+    text-decoration: none;
+    color: inherit;
+}
         .container {
             max-width: 1000px;
             margin: 40px auto;
@@ -55,7 +85,7 @@
             margin-bottom: 20px;
             color: #333;
         }
-        .images {
+   .images {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -125,6 +155,11 @@
 <body>
     <header>
         <h1><a href="https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%9B%D7%90%D7%95%D7%96%D7%95%D7%90%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%94" target="_blank" style="color: inherit; text-decoration: none;">חקר הארכיאוזואולגיה בישראל</a></h1>
+<button class="header-button">
+            <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%9E%D7%A4%D7%AA-%D7%90%D7%AA%D7%A8%D7%99%D7%9D/?draft=true" target="_blank">
+               בחזרה למפה
+            </a>
+        </button>
     </header>
     <div class="container">
         <div class="section">
