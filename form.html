@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Collection Form</title>
+</head>
+<body>
+    <h1>Data Collection Form</h1>
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="hidden" id="latitude" name="latitude">
+        <input type="hidden" id="longitude" name="longitude">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // Check if Geolocation is supported
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                // Get the coordinates
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                // Set the values in the hidden input fields
+                document.getElementById('latitude').value = latitude;
+                document.getElementById('longitude').value = longitude;
+            }, function(error) {
+                console.log("Error getting location: " + error.message);
+            });
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        // Handle form submission
+        document.getElementById('dataForm').onsubmit = function(event) {
+            event.preventDefault();
+            var formData = new FormData(event.target);
+
+            // Display the form data (or send it to the server)
+            console.log('Form Data:', {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                description: formData.get('description'),
+                latitude: formData.get('latitude'),
+                longitude: formData.get('longitude')
+            });
+
+            // Send data to server (example)
+            fetch('your-server-endpoint', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch(error => console.error('Error:', error));
+        };
+    </script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>אפליקציית מיפוי</title>
     <style>
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+        @import url('https://cdnjs.cloudflare.com/ajax/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,11 +65,17 @@
             transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px;
         }
         .btn:hover {
             background: linear-gradient(90deg, #185a9d, #43cea2);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+	.btn-bold {
+            font-size: 1.4em;
+            font-weight: bold;
+            padding: 20px 40px;
         }
         .logos {
             display: flex;
@@ -95,8 +101,10 @@
 <body>
     <div class="container">
         <h1>ברוכים הבאים לפורטל הנתונים הארכיאוזואולוגים של ישראל <i class="fas fa-map-marker-alt icon"></i></h1>
-        <p>באתר זה ניתן לחקור ולנתח את הנתונים הארכיזואולגים בישראל בצורה מתקדמת ונוחה</p>
-        <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%9E%D7%A4%D7%AA-%D7%90%D7%AA%D7%A8%D7%99%D7%9D/?draft=true" class="btn">התחל עכשיו</a>
+        <p>באתר זה ניתן לחקור ולנתח את הנתונים הארכיאוזואולגים בישראל בצורה מתקדמת ונוחה</p>
+        <a href="#" class="btn">מפת אתרים</a>
+        <a href="#" class="btn">ניתוח מתקדם</a>
+        <a href="#" class="btn">המחקר הארכיאוזואולוגי</a>
     </div>
     <div class="logos">
         <img src="https://service.israntique.org.il/images/top_antiq_logo.svg" alt="Logo 1">

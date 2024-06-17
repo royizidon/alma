@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אפליקציית מיפוי</title>
+    <title>מפת אתרי ארכיאולוגיה</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap">
     <style>
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Heebo', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,36 +15,21 @@
             align-items: center;
             flex-direction: column;
             height: 100vh;
-            background: linear-gradient(135deg, #56ccf2, #2f80ed);
+            background: linear-gradient(135deg, #65adff, #337ab7);
             direction: rtl;
             color: #ffffff;
             text-align: center;
         }
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            width: 90%;
-            max-width: 700px;
-            margin: 20px;
-            position: relative;
+            padding: 20px;
+            text-align: center;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 20px;
             font-weight: 700;
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 .icon {
-            margin-left: 10px;
-            font-size: 0.8em;
-            color: #fff;
         }
         p {
             font-size: 1.2em;
@@ -56,7 +40,7 @@
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            font-size: 1.2em;
+            font-size: 1em;
             color: #ffffff;
             background: linear-gradient(90deg, #43cea2, #185a9d);
             border: none;
@@ -76,10 +60,11 @@
             justify-content: center;
             align-items: center;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
         .logos img {
-            height: 80px; /* Increased the height for larger logos */
-            margin: 0 15px;
+            height: 50px;
+            margin: 10px;
             transition: transform 0.3s;
         }
         .logos img:hover {
@@ -94,17 +79,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>ברוכים הבאים לפורטל הנתונים הארכיאוזואולוגים של ישראל <i class="fas fa-map-marker-alt icon"></i></h1>
-        <p>באתר זה ניתן לחקור ולנתח את הנתונים הארכיזואולגים בישראל בצורה מתקדמת ונוחה</p>
+        <h1>ברוכים הבאים למפת אתרי ארכיאולוגיה</h1>
+        <p>חקור את אתרי הארכיאולוגיה המרתקים ביותר בישראל באמצעות האפליקציה שלנו.</p>
         <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%9E%D7%A4%D7%AA-%D7%90%D7%AA%D7%A8%D7%99%D7%9D/?draft=true" class="btn">התחל עכשיו</a>
-    </div>
-    <div class="logos">
-        <img src="https://service.israntique.org.il/images/top_antiq_logo.svg" alt="Logo 1">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Haifa_logo_official_apperence_dark_%28cropped%29.png" alt="Logo 2">
-        <img src="https://conservation.haifa.ac.il/images/samc_logo.png" alt="Logo 3">
+        <div class="logos">
+            <img src="https://service.israntique.org.il/images/top_antiq_logo.svg" alt="Logo 1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Haifa_logo_official_apperence_dark_%28cropped%29.png" alt="Logo 2">
+            <img src="https://conservation.haifa.ac.il/images/samc_logo.png" alt="Logo 3">
+        </div>
     </div>
     <footer>
-        &copy; 2024 אפליקציית מיפוי. כל הזכויות שמורות.
+        &copy; 2024 מפת אתרי ארכיאולוגיה. כל הזכויות שמורות.
     </footer>
 </body>
 </html>
