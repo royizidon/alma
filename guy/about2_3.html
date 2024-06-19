@@ -6,30 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> חקר הארכיאולוגיה בישראל</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0; /* Light grey background */
-            color: #333;
-            direction: rtl;
-            text-align: center;
-        }
-        header {
-            background: linear-gradient(135deg, #56ccf2, #2f80ed);
-            color: white;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #fff;
-        }
-        h1 a {
-            color: inherit;
-            text-decoration: none;
-        }
-        header {
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333;
+    direction: rtl;
+    text-align: center;
+}
+header {
     background: linear-gradient(135deg, #56ccf2, #2f80ed);
     color: white;
     padding: 20px;
@@ -37,12 +23,15 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.header-content {
-    display: flex;
-    align-items: center;
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #fff;
 }
-
+h1 a {
+    color: inherit;
+    text-decoration: none;
+}
 .header-button {
     background-color: #fff;
     color: #2f80ed;
@@ -51,105 +40,112 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    margin-left: 20px; /* Adjust spacing as needed */
+    margin-left: 20px;
 }
-
 .header-button a {
     text-decoration: none;
     color: inherit;
 }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        .text {
-            padding: 20px;
-        }
-        h2 {
-            font-size: 2em;
-            color: #337ab7;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #333;
-        }
-   .images {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .image-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 10px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        .modal-content {
-            position: relative;
-            margin: auto;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            max-width: 60%; /* Adjusted size */
-            text-align: center;
-        }
-        .modal-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .modal-content p {
-            margin-top: 10px;
-            color: #333;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: #aaa;
-            font-size: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.section {
+    margin-bottom: 40px;
+}
+.text {
+    padding: 20px;
+}
+h2 {
+    font-size: 2em;
+    color: #337ab7;
+    margin-bottom: 10px;
+}
+p.multi-column {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+    column-count: 3;
+    column-gap: 20px;
+}
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.image-container {
+    position: relative;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.image-container:hover {
+    transform: scale(1.05);
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.modal-content p {
+    margin-top: 10px;
+    color: #333;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body>
@@ -165,26 +161,27 @@
         <div class="section">
             <div class="text">
                 <h2>שרידי בעלי חיים מאתרים ארכיאולוגיים</h2>
-                <p>עצמות, שיניים, קרניים, קונכיות וקליפות ביצים — הם מקור הידע המרכזי והמהימן ביותר להכרת השינויים שחלו בהרכב החי בתקופות השונות. שרידים אלה מצויים כמעט בכל תקופה וקונטקסט ארכאולוגי ועשויים להצביע על מזונו של האדם הקדום, ללמד על הסביבה הקדומה שפעל בה ולשפוך אור על התפקיד שמילאו בעלי חיים בחיי הכלכלה, האדמיניסטרציה, התרבות והרוח. המחקר האינטנסיבי המתקיים בישראל בעשרות השנים האחרונות הניב ממצא ייחודי ועשיר בשאלות מחקר מרכזיות ובהן האבולוציה של הצייד האנושי בתקופות הפרהיסטוריות, ראשית ביות בעלי חיים וראשית החקלאות, התפתחות ממשק הגידול של חיות הבית ותשתית הספקת המזון לערים הקדומות, התפתחות מסורות מזון שאפיינו את הופעת הדתות המונותאסטיות בישראל הקדומה. ניתוח עצמות בעלי חיים ברצף התקופות מאפשר גם להתחקות אחר השינויים שחלו בסביבה הקדומה. ממצאים אלה מספקים מידע חשוב לחקר התפתחות נופי התרבות של הארץ בעת העתיקה, ומאפשרים לימוד מעמיק של אופן התפתחות הטבע כפי שהוא מוכר היום.
-במהלך למעלה מ-90 שנות מחקר במאות אתרים ארכיאולוגיים בישראל נאסף מידע זואולוגי עשיר והוא כולל למעלה מ-1200 דוחו"ת ארכאוזואולוגיים מלמעלה מ-700 אתרים. נתונים אלו מבוססים על מאגר המידע הארכאוזואולוגי לדרום הלבנט של המעבדה לארכאוזואולוגיה באוניברסיטת חיפה והינם חלק ממרכז הידע למדעי הארכאולוגיה של אוניברסיטת חיפה ורשות העתיקות. בעשרים השנים האחרונות הוכפל המחקר, בין השאר בעקבות גידול משמעותי של עבודות בתקופות הקלאסיות וימי הביניים שכמעט לא היו מיוצגות בעשורים הקודמים. כיום נמצאת הארכאוזואולוגיה הישראלית בשיא פריחתה וממוקמת בחוד החנית של המחקר הארכאולוגי העולמי.
+                <p class="multi-column">עצמות, שיניים, קרניים, קונכיות וקליפות ביצים — הם מקור הידע המרכזי להכרת השינויים שחלו בהרכב החי בתקופות השונות. שרידים אלה מצויים כמעט בכל תקופה ועשויים להצביע על מזונו של האדם הקדום וללמד על הסביבה הקדומה שפעל בה. ניתוח עצמות בעלי חיים ברצף התקופות מאפשר גם להתחקות אחר השינויים שחלו בסביבה הקדומה. ממצאים אלה מספקים מידע חשוב לחקר התפתחות נופי התרבות של הארץ בעת העתיקה.
+במהלך למעלה מ-90 שנות מחקר במאות אתרים ארכיאולוגיים בישראל נאסף מידע מלמעלה מ-700 אתרים. הנתונים באתר מגיעים ממאגר המידע לדרום הלבנט של המעבדה לארכיאוזואולוגיה באוניברסיטת חיפה .
 </p>
             </div>
             <div class="images">
                 <div class="image-container" onclick="openModal('1.jpg', 'עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי (צילום: רועי שפיר)')">
                     <img src="1.jpg" alt="עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי">
                 </div>
-<div class="image-container" onclick="openModal('2.jpg', 'עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי (צילום: רועי שפיר)')">
+                <div class="image-container" onclick="openModal('2.jpg', 'עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי (צילום: רועי שפיר)')">
                     <img src="2.jpg" alt="עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי">
                 </div>
                 <div class="image-container" onclick="openModal('3.jpg', 'עצמות בעלי חיים מאתרים ארכיאולוגיים: (א) במהלך החשיפה בחפירה ארכיאולוגית. בתמונה נראות שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון); (ב) במהלך הזיהוי והקִטלוג, לאחר שטיפה וניקוי, העצמות ממוינות לפי מין, חלק גוף וההקשר הארכיאולוגי שבו נתגלו (לפי שכבה ולפי מיקום הריבוע בחפירה) (צילום: גיא בר-עוז). ניתוח כמותי של פיזור העצמות מאפשר לזהות שינויים תקופתיים ומרחביים בדגמי הציד; (ג) במעבדה מסודרות ונארזות העצמות על פי מינים וחלקי שלד (צילום: גיא בר-עוז)')">
                     <img src="3.jpg" alt="עצמות בעלי חיים מאתרים ארכיאולוגיים">
                 </div>
+            
             </div>
         </div>
         <div class="section">
             <div class="text">
                 <h2>תנודות במיני היונקים באזורנו ב־ 10,000 השנים האחרונות</h2>
-                <p> סיכום השינויים העיקריים שחלו בהרכב מיני היונקים הגדולים באזור במשך 10,000 השנים האחרונות מגלה כי מתוך שלושים מיני יונקים בינוניים וגדולים שחיו כאן בסוף תקופת הפלייסטוקן ומייד אחריה (מ־46,000 ועד 8,000 שנים לפסה"נ), רק כמחצית שרדו עד לעידן המודרני. ארבעה מינים נעלמו מן האזור לקראת סוף התקופה הפליאוליתית. שלושה־עשר מינים נעלמו ב־3,000 השנים האחרונות, מתוכם נכחדו שבעה מינים מנופי הארץ החל מסוף המאה התשע־עשרה ועד לסוף המאה העשרים. אירוע ההכחדה הראשון היה במהלך האלף הראשון לפסה"נ, בשלבים המאוחרים של תקופת הברזל (ראשית המאה השמינית לפסה"נ), ונכחדו בו שלושה בעלי פרסה גדולים (שור הבר, בובל והיפופוטם). באירוע נוסף, בראשית האלף השני לסה"נ, בתקופה הצלבנית, היקף ההכחדה היה מצומצם וכלל מין בודד של בעל פרסה (אייל אדמוני) ומין בודד של טורף (אריה). אירוע ההכחדה האחרון חל בראשית המאה העשרים ומוכר בעיקר מנתונים היסטוריים. באירוע זה נכחדו ארבעה מיני בעלי פרסה (יחמור פרסי, אייל הכרמל, עז בר ופרא) ושני מיני טורפים (דוב וברדלס). בשנים האחרונות נוסף גם הנמר לרשימת המינים הנכחדים.
+                <p class="multi-column"> סיכום השינויים העיקריים שחלו בהרכב מיני היונקים הגדולים באזור במשך 10,000 השנים האחרונות מגלה כי מתוך שלושים מיני יונקים בינוניים וגדולים שחיו כאן בסוף תקופת הפלייסטוקן ומייד אחריה (מ־46,000 ועד 8,000 שנים לפסה"נ), רק כמחצית שרדו עד לעידן המודרני. ארבעה מינים נעלמו מן האזור לקראת סוף התקופה הפליאוליתית. שלושה־עשר מינים נעלמו ב־3,000 השנים האחרונות, מתוכם נכחדו שבעה מינים מנופי הארץ החל מסוף המאה התשע־עשרה ועד לסוף המאה העשרים. אירוע ההכחדה הראשון היה במהלך האלף הראשון לפסה"נ, בשלבים המאוחרים של תקופת הברזל (ראשית המאה השמינית לפסה"נ), ונכחדו בו שלושה בעלי פרסה גדולים (שור הבר, בובל והיפופוטם). באירוע נוסף, בראשית האלף השני לסה"נ, בתקופה הצלבנית, היקף ההכחדה היה מצומצם וכלל מין בודד של בעל פרסה (אייל אדמוני) ומין בודד של טורף (אריה). אירוע ההכחדה האחרון חל בראשית המאה העשרים ומוכר בעיקר מנתונים היסטוריים. באירוע זה נכחדו ארבעה מיני בעלי פרסה (יחמור פרסי, אייל הכרמל, עז בר ופרא) ושני מיני טורפים (דוב וברדלס). בשנים האחרונות נוסף גם הנמר לרשימת המינים הנכחדים.
 </p>
 <div class="images">
     <div class="image-container" onclick="openModal('10.jpg', 'הופעה/הכחדה של מיני חיות הבית וחיות הבר (אוכלי עשב וטורפים) בין סוף תקופת הפלייסטוקן להיום (מתוך בר-עוז ווייסברוד 2016).')">
