@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerus - Modeling and Mapping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .text-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .name {
+            font-size: 4em;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #000;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .image {
+            max-width: 40%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <div class="name">JERUS</div>
+            <div class="tagline">The Modelling and Mapping Company</div>
+        </div>
+        <div class="image-container">
+            <img src="contour.png" alt="Contour Image" class="image">
+        </div>
+    </div>
+</body>
+</html>

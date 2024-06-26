@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wall</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        #wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+            gap: 5px;
+            width: 100%;
+            height: 100%;
+            justify-items: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .size-0 { width: 30px; height: 30px; }
+        .size-1 { width: 40px; height: 40px; }
+        .size-2 { width: 50px; height: 50px; }
+        .size-3 { width: 60px; height: 60px; }
+        .size-4 { width: 70px; height: 70px; }
+        .size-5 { width: 80px; height: 80px; }
+        .size-6 { width: 90px; height: 90px; }
+        .size-7 { width: 100px; height: 100px; }
+        .size-8 { width: 110px; height: 110px; }
+        .size-9 { width: 120px; height: 120px; }
+    </style>
+</head>
+<body>
+    <div id="wall"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const wall = document.getElementById('wall');
+            const sizes = [225, 200, 175, 150, 125, 100, 75, 50, 25, 5];
+            const sizeClasses = sizes.map((_, index) => `size-${index}`);
+            let totalRows = 1;
+
+            sizes.forEach((size, index) => {
+                const sizeClass = sizeClasses[index];
+                const buttons = Array.from({ length: size }).map(() => {
+                    const button = document.createElement('button');
+                    button.className = sizeClass;
+                    button.textContent = 'Button';
+                    return button;
+                });
+
+                buttons.forEach(button => wall.appendChild(button));
+                totalRows += size;
+            });
+
+            // Set the number of rows to accommodate all buttons without scrolling
+            wall.style.gridTemplateRows = `repeat(${totalRows}, auto)`;
+        });
+    </script>
+</body>
+</html>

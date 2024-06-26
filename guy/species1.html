@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Species Data Table</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f4f4f4; color: #333; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        input[type="text"] { margin-bottom: 10px; padding: 10px; width: 20%; }
+    </style>
+</head>
+<body>
+
+<h2>Search by Species:</h2>
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for species...">
+
+<table class="dataframe" id="speciesTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Species</th>
+      <th>Number of Sites</th>
+      <th>Section</th>
+      <th>Average per site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><i>Acinonyx jubatus</i></td>
+      <td>1</td>
+      <td>Biblical</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Alcelaphus buselaphus</i></td>
+      <td>18</td>
+      <td>Prehistory, Biblical</td>
+      <td>6.4</td>
+    </tr>
+    <tr>
+      <td><i>Alcelaphus sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <td><i>Antelopini gen. et sp. indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <td><i>Apodemus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Bos indicus</i></td>
+      <td>7</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>3.7</td>
+    </tr>
+    <tr>
+      <td><i>Bos oldowayensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>39.0</td>
+    </tr>
+    <tr>
+      <td><i>Bos primigenius</i></td>
+      <td>59</td>
+      <td>Prehistory, Biblical</td>
+      <td>60.7</td>
+    </tr>
+    <tr>
+      <td><i>Bos sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>29.5</td>
+    </tr>
+    <tr>
+      <td><i>Bos taurus</i></td>
+      <td>294</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>118.7</td>
+    </tr>
+    <tr>
+      <td><i>Bovidae gen. et sp. indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <td><i>Bovini gen. et sp. indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <td><i>Camelus cf. thomasi</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td><i>Camelus dromedarius</i></td>
+      <td>80</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>12.9</td>
+    </tr>
+    <tr>
+      <td><i>Camelus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Canis aureus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td><i>Canis familiaris</i></td>
+      <td>145</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>13.7</td>
+    </tr>
+    <tr>
+      <td><i>Canis lupus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Canis mosbachensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <td><i>Canis sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td><i>Capra aegagrus</i></td>
+      <td>41</td>
+      <td>Prehistory, Biblical</td>
+      <td>80.8</td>
+    </tr>
+    <tr>
+      <td><i>Capra hircus</i></td>
+      <td>162</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>37.4</td>
+    </tr>
+    <tr>
+      <td><i>Capra ibex nubiana</i></td>
+      <td>6</td>
+      <td>Prehistory, Biblical, Classical</td>
+      <td>151.3</td>
+    </tr>
+    <tr>
+      <td><i>Capra sp.</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <td><i>Capreolus capreolus</i></td>
+      <td>50</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <td><i>Capreolus sp.</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>30.2</td>
+    </tr>
+    <tr>
+      <td><i>Cervidae</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>60.2</td>
+    </tr>
+    <tr>
+      <td><i>Cervus dama</i></td>
+      <td>53</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>12.7</td>
+    </tr>
+    <tr>
+      <td><i>Cervus elaphus</i></td>
+      <td>49</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>16.2</td>
+    </tr>
+    <tr>
+      <td><i>Cf. caracal caracal</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Cf. mellivora capensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Chionomys nivalis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td><i>Crocidura cf. suaveolens</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Crocuta crocuta</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>37.8</td>
+    </tr>
+    <tr>
+      <td><i>Crocuta hyaena</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td><i>Dama</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>618.0</td>
+    </tr>
+    <tr>
+      <td><i>Dama mesopotamica</i></td>
+      <td>135</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>38.6</td>
+    </tr>
+    <tr>
+      <td><i>Dicerhorinus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <td><i>Dicerorhinus hemitoechus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>24.7</td>
+    </tr>
+    <tr>
+      <td><i>Elephas sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus africanus</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>13.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus asinus</i></td>
+      <td>132</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>10.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus caballus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>44.3</td>
+    </tr>
+    <tr>
+      <td><i>Equus caballus hydruntinus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus cabalus</i></td>
+      <td>38</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <td><i>Equus cf. melkiensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus ferus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>71.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus hemionus</i></td>
+      <td>10</td>
+      <td>Prehistory, Biblical</td>
+      <td>13.9</td>
+    </tr>
+    <tr>
+      <td><i>Equus hemionus asinus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus hyduntinus</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus sp.</i></td>
+      <td>7</td>
+      <td>Prehistory</td>
+      <td>19.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus sp.1</i></td>
+      <td>106</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <td><i>Equus tabeti</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>126.7</td>
+    </tr>
+    <tr>
+      <td><i>Erinaceus concolor</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Erinaceus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Felidae indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Felis caracal</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td><i>Felis chaus</i></td>
+      <td>11</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>15.9</td>
+    </tr>
+    <tr>
+      <td><i>Felis sylvestris</i></td>
+      <td>35</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <td><i>Gallus galus</i></td>
+      <td>101</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>30.6</td>
+    </tr>
+    <tr>
+      <td><i>Gazella gazella</i></td>
+      <td>116</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>111.2</td>
+    </tr>
+    <tr>
+      <td><i>Gazelle sp.</i></td>
+      <td>98</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>70.5</td>
+    </tr>
+    <tr>
+      <td><i>Genetta genetta</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Gerbillus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Giraffa sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td><i>Herpestes icheumon</i></td>
+      <td>6</td>
+      <td>Prehistory</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <td><i>Herpestes sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td><i>Hippopotamus amphibius</i></td>
+      <td>16</td>
+      <td>Prehistory, Biblical</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <td><i>Hippopotamus sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td><i>Hyaena hyaena</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Hyaenidae indet.</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td><i>Hypolagus beremendensis</i></td>
+      <td>1</td>
+            <td>Prehistory</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <td><i>Hystrix indica</i></td>
+      <td>4</td>
+      <td>Prehistory, Biblical, Middle Ages</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <td><i>Hystrix refossa</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>419.0</td>
+    </tr>
+    <tr>
+      <td><i>Kolpochoerus evronesis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Kolpochoerus olduvaniensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <td><i>Leptobos sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <td><i>Lepus capensis</i></td>
+      <td>28</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>29.2</td>
+    </tr>
+    <tr>
+      <td><i>Lutra simplicidens</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <td><i>Lycaon lycaonoides</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td><i>Lycaon sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td><i>Lynx sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <td><i>Macaca sylvana</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <td><i>Mammuthus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <td><i>Martes foina</i></td>
+      <td>16</td>
+      <td>Prehistory, Biblical, Classical</td>
+      <td>8.4</td>
+    </tr>
+    <tr>
+      <td>Mediumlarge</td>
+      <td>45</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>102.8</td>
+    </tr>
+    <tr>
+      <td><i>Megaloceros sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td><i>Megantereon sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td><i>Meles meles</i></td>
+      <td>17</td>
+      <td>Prehistory, Biblical, Classical</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <td><i>Mellivora sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Microtus chionomys</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Microtus guenthri</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>29.5</td>
+    </tr>
+    <tr>
+      <td>Mule</td>
+      <td>4</td>
+      <td>Prehistory, Biblical, Middle Ages</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <td><i>Mustelidae</i></td>
+      <td>1</td>
+      <td>Biblical</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Mustella nivalis</i></td>
+      <td>4</td>
+      <td>Biblical, Classical</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <td><i>Oryx cf. gazella</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td><i>Oryx leucoryx</i></td>
+      <td>1</td>
+      <td>Biblical</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Oryx sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td><i>Ovis aries</i></td>
+      <td>150</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>45.2</td>
+    </tr>
+    <tr>
+      <td><i>Ovis capra</i></td>
+      <td>305</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>336.4</td>
+    </tr>
+    <tr>
+      <td><i>Palaeoloxodon antiquus</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>137.5</td>
+    </tr>
+    <tr>
+      <td><i>Palaeoloxodon antiquus.1</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>154.0</td>
+    </tr>
+    <tr>
+      <td><i>Panthera gombaszoegensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td><i>Panthera lio</i></td>
+      <td>15</td>
+      <td>Prehistory, Biblical</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <td><i>Panthera paradus</i></td>
+      <td>5</td>
+      <td>Prehistory, Biblical</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td><i>Panthera sp.</i></td>
+      <td>7</td>
+      <td>Prehistory, Biblical, Classical</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <td><i>Pelorovis oldowayensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <td><i>Pontoceros antiquus or sprocerus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <td><i>Procavia</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <td><i>Procavia capensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td><i>Procavia capensis.1</i></td>
+      <td>4</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <td><i>Pseudodama sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1298.0</td>
+    </tr>
+    <tr>
+      <td><i>Rhinoceros sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Sciurus anomalous</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td>Shepgoat</td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <td><i>Spalax ehrenbergi</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>9.5</td>
+    </tr>
+    <tr>
+      <td><i>Stegodon sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <td><i>Stellagama stellio</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <td><i>Stephanorhinus etruscus etruscus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <td><i>Stephanorhinus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Struthio camelus</i></td>
+      <td>11</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Sus scrofa</i></td>
+      <td>68</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>34.7</td>
+    </tr>
+    <tr>
+      <td><i>Sus scrofa dom.</i></td>
+      <td>225</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>52.9</td>
+    </tr>
+    <tr>
+      <td><i>Sus strozzi</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <td><i>Theropithecus cf. oswaldi</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Ursus arctos</i></td>
+      <td>20</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Ursus etruscus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <td><i>Ursus sp.</i></td>
+      <td>14</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <td><i>Vormela peregusna</i></td>
+      <td>24</td>
+      <td>Prehistory, Biblical, Classical</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <td><i>Vulpes sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td><i>Vulpes vulpes</i></td>
+      <td>73</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>23.1</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+function filterTable() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("speciesTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0]; // Index 0 to search in the 'Species' column only
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+

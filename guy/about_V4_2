@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חקר הארכיאולוגיה בישראל</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333;
+            direction: rtl;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #56ccf2, #2f80ed);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #fff;
+        }
+        h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .header-button {
+            background-color: #fff;
+            color: #2f80ed;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 20px; /* Adjust spacing as needed */
+        }
+        .header-button a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .text {
+            padding: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #337ab7;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 10px; /* Adjust space between text and line */
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 100%; /* Full width of the parent element */
+            height: 2px; /* Height of the line */
+            background-color: #337ab7; /* Color of the line */
+            position: absolute;
+            left: 0;
+            bottom: -5px; /* Adjust to position the line properly */
+        }
+        p.multi-column {
+            column-count: 3;
+            column-gap: 20px; /* Adjust the gap between columns as needed */
+        }
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 5px solid #ddd; /* Adding a frame to the image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adding a shadow for a more 3D effect */
+            border-radius: 10px; /* Optional: maintaining the rounded corners */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            padding: 20px; /* Add padding to prevent content from being cut */
+            background-color: #fff;
+            border-radius: 10px;
+            max-width: 80%; /* Adjusted size */
+            max-height: 80%; /* Adjusted max-height */
+            text-align: center;
+            overflow: auto; /* Enable scrolling for large content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: calc(80vh - 100px); /* Ensure the image fits within the modal */
+            height: auto;
+            width: auto;
+            border-radius: 10px;
+        }
+        .modal-content p {
+            margin-top: 10px;
+            color: #333;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%9B%D7%90%D7%95%D7%96%D7%95%D7%90%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%94" target="_blank">חקר הארכיאוזואולוגיה בישראל</a></h1>
+        <button class="header-button">
+            <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%9E%D7%A4%D7%AA-%D7%90%D7%AA%D7%A8%D7%99%D7%9D/?draft=true" target="_blank">
+                בחזרה למפה
+            </a>
+        </button>
+    </header>
+    <div class="container">
+        <div class="section">
+            <div class="text">
+                <h2>הפורטל הארכיאוזואולוגי</h2>
+                <p>
+                    
+                    בסיס הנתונים הארכיאוזואולוגי של ישראל הוא פרי שיתוף פעולה בין המעבדה לארכיאוזואולוגיה בבית הספר לארכאולוגיה ותרבויות ימיות, אוניברסיטת חיפה ורשות העתיקות.
+                    מטרת האתר היא לאפשר לאנשי מקצוע ולציבור הרחב לחקור ולנתח את הנתונים הארכיאוזואולגים בישראל בצורה פשוטה ונוחה.
+                    המידע באתר כולל מעל ל-700 רשומות על ממצא ארכיאוזואולוגי מאתרים שונים שנחפרו בארץ, בהתייחס ל-131 מינים שונים של בעלי חיים שנמצאו בהם.
+                    מפת האתרים מאפשרת תצוגה, מיון והשוואה של הממצא מהאתרים השונים בפרקי זמן שונים (הפרהיסטוריה, תקופת המקרא, התקופה הקלאסית והמוסלמית), וגם חיפוש ממוקד לפי אתר או חוקר. הפעלת חיפוש מעדכנת באופן אוטומטי את המפה ומציגה את תוצאות החיפוש. בלחיצה על אתר במפה מתקבל המידע הבסיסי אודות המצאי הארכיאוזואולוגי שתועד במקום, יחד עם הפניה ביבליוגרפית מקוצרת (חוקר, שנה).
+                    דף נוסף של ניתוח מתקדם מאפשר להשוות בין שתי מפות, כאשר בכל מפה ניתן להציג תפוצה של מין מסוים, או להציג את הממצאים מתקופה מסויימת, לצד הצגה סטטיסטית של הנתונים בטבלה.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text">
+                <h2>שרידי בעלי חיים מאתרים ארכיאולוגיים</h2>
+                <p >
+                    עצמות, שיניים, קרניים, קונכיות וקליפות ביצים — הם מקור הידע המרכזי להכרת השינויים שחלו בהרכב החי בתקופות השונות. שרידים אלה מצויים כמעט בכל תקופה ועשויים להצביע על מזונו של האדם הקדום וללמד על הסביבה הקדומה שפעל בה. ניתוח עצמות בעלי חיים ברצף התקופות מאפשר גם להתחקות אחר השינויים שחלו בסביבה הקדומה. ממצאים אלה מספקים מידע חשוב לחקר התפתחות נופי התרבות של הארץ בעת העתיקה.
+                    במהלך למעלה מ-90 שנות מחקר במאות אתרים ארכיאולוגיים בישראל נאסף מידע מלמעלה מ-700 אתרים. הנתונים באתר מגיעים ממאגר המידע לדרום הלבנט של המעבדה לארכיאוזואולוגיה באוניברסיטת חיפה.
+                </p>
+            </div>
+            <div class="images">
+                <div class="image-container" onclick="openModal('1.jpg', 'עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי (צילום: רועי שפיר)')">
+                    <img src="1.jpg" alt="עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי">
+                </div>
+                <div class="image-container" onclick="openModal('2.jpg', 'עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי (צילום: רועי שפיר)')">
+                    <img src="2.jpg" alt="עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי">
+                </div>
+                <div class="image-container" onclick="openModal('3.jpg', 'עצמות בעלי חיים מאתרים ארכיאולוגיים: (א) במהלך החשיפה בחפירה ארכיאולוגית. בתמונה נראות שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון); (ב) במהלך הזיהוי והקִטלוג, לאחר שטיפה וניקוי, העצמות ממוינות לפי מין, חלק גוף וההקשר הארכיאולוגי שבו נתגלו (לפי שכבה ולפי מיקום הריבוע בחפירה) (צילום: גיא בר-עוז). ניתוח כמותי של פיזור העצמות מאפשר לזהות שינויים תקופתיים ומרחביים בדגמי הציד; (ג) במעבדה מסודרות ונארזות העצמות על פי מינים וחלקי שלד (צילום: גיא בר-עוז)')">
+                    <img src="3.jpg" alt="עצמות בעלי חיים מאתרים ארכיאולוגיים">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h2>תנודות במיני היונקים באזורנו</h2>
+                <p>
+                    סיכום השינויים העיקריים שחלו בהרכב מיני היונקים באזור במשך 10,000 השנים האחרונות מגלה כי מתוך שלושים מיני יונקים בינוניים וגדולים שחיו כאן בסוף תקופת הפלייסטוקן ומייד אחריה (מ־46,000 ועד 8,000 שנים לפסה"נ), רק כמחצית שרדו עד לעידן המודרני. ארבעה מינים נעלמו מן האזור לקראת סוף התקופה הפליאוליתית. שלושה־עשר מינים נעלמו ב־3,000 השנים האחרונות, מתוכם נכחדו שבעה מינים מנופי הארץ החל מסוף המאה התשע־עשרה ועד לסוף המאה העשרים. אירוע ההכחדה הראשון היה במהלך האלף הראשון לפסה"נ, בשלבים המאוחרים של תקופת הברזל (ראשית המאה השמינית לפסה"נ), ונכחדו בו שלושה בעלי פרסה גדולים (שור הבר, בובל והיפופוטם). באירוע נוסף, בראשית האלף השני לסה"נ, בתקופה הצלבנית, היקף ההכחדה היה מצומצם וכלל מין בודד של בעל פרסה (אייל אדמוני) ומין בודד של טורף (אריה).
+                </p>
+                <div class="images">
+                    <div class="image-container" onclick="openModal('10.jpg', 'הופעה/הכחדה של מיני חיות הבית וחיות הבר (אוכלי עשב וטורפים) בין סוף תקופת הפלייסטוקן להיום (מתוך בר-עוז ווייסברוד 2016).')">
+                        <img src="10.jpg" alt="הופעה/הכחדה של מיני חיות הבית וחיות הבר">
+                    </div>
+                    <div class="image-container" onclick="openModal('11.jpg', 'נתוני מסת הגוף של מיני יונקים אוכלי עשב וטורפים שנכחדו מנופי הארץ ב־ 20,000 השנים האחרונות, מאז סוף תקופת הקרח האחרונה, מוצגים על ציר הזמן (מתוך בר-עוז, מלקינסון ונדל 2024)')">
+                        <img src="11.jpg" alt="נתוני מסת הגוף של מיני יונקים אוכלי עשב וטורפים שנכחדו מנופי הארץ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h2>ארכיאוזואולוגיה ישראלית</h2>
+                <p>
+                   ארכיאוזואולוגיה ישראלית 
+לאחר הקמתה של מדינת ישראל התפתחה קהילה מקומית של ארכיאולוגים ישראלים, ובמקביל גדל העניין בחקר עצמות בעלי החיים שלוקטו בחפירות. החוקר הישראלי הראשון שעסק במחקרים פליאונטולוגיים וארכיאוזואולוגיים במדינת ישראל היה גאורג האז. אף שהיה בעיקר זואולוג שחקר בעלי חיים מודרניים (בייחוד זוחלים, מכרסמים ורכיכות), עבד האז בקשר הדוק עם ארכיאולוגים, ובייחוד עם הפרהיסטוריון משה שטקליס. בין תלמידיו של האז היה איתן צ'רנוב (2002-1935), שהוביל לפריצת דרך של ממש במחקר הארכיאוזואולוגי בישראל. עבודת הדוקטור שכתב עסקה ברצף מיני המכרסמים בפלייסטוקן העליון של ישראל. בשנת 1965 עם מינויו למרצה במחלקה לזואולוגיה באוניברסיטה העברית, המשיך וערך מספר רב של מחקרים בארכיאוזואולוגיה, פליאונטולוגיה, פלאואקולוגיה ובזואוגיאוגרפיה קדומה ועכשווית. חקר הפרהיסטוריה בארץ ישראל התפתח ביתר שאת בשנות ה-60 וה-70 בעקבות מחקרי היסוד שערך עופר בר–יוסף (2020-1937), שתגליותיו העמיקו את הידע הקיים על תולדות האדם בתקופות הפרהיסטוריות (אתרי מפתח שחפר כוללים את עובדייה, מערת כבארה ומערת היונים). בחפירותיו של בר–יוסף נקבע גם הדגם לשיתוף פעולה בין–תחומי בעבודת השדה בארכיאולוגיה הארץ-ישראלית. שיתוף פעולה זה הולך ומתרחב כיום גם בחפירות ארכיאולוגיות של תילים מקראיים ואתרים מהתקופות הקלאסיות. 
+איתן צ‘רנוב ועופר בר–יוסף שיתפו פעולה שנים רבות ועבודותיהם המשותפות ממשיכות גם היום לעורר השראה במחקר הארכיאוזואולוגי בישראל ומחוצה לה. צ'רנוב ובר–יוסף גם דאגו להמשך פיתוח המחקר הארכיאוזואולוגי בישראל באמצעות הכשרת סטודנטים רבים בתחום, רבים מהם ממשיכים לעבוד גם היום באוניברסיטאות בארץ ומחוצה לה וכן במוסדות אחרים, כרשות העתיקות ומוזיאונים. עימם נמנים סיימון דייוויס, תמר דיין, ליאורה קולסקה-הורביץ, קרול קופ, רבקה רבינוביץ, דניאלה בר-יוסף מאייר, גילה כחילה בר-גל, משה שדה, גדעון הרטמן ומרים בלמייקר. סטודנטים ישראלים נוספים עברו הכשרה בארכיאוזואולוגיה בהדרכתם של שלמה הלווינג מאוניברסיטת תל אביב ושל ליאורה קולסקה-הורביץ מהאוניברסיטה העברית. לאחר מינויה של תמר דיין למחלקה לזואולוגיה באוניברסיטת תל אביב החלה הכשרה של דור חדש של ארכיאוזואולוגים. בין תלמידיה שהתמחו בארכיאוזואולוגיה ניתן למנות את עירית זהר, גיא בר־עוז, ענת הבר ולידר ספיר-חן. במקביל התפתחו כמה תת־התמחויות בארכיאוזואולוגיה: ברכיכות )יוסף הלר, הנק מיניס, ענבר קטלב ודניאלה בר־יוסף), בדגים )עמרי לרנאו ועירית זהר) ובמכרסמים (ליאור וייסברוד ומרים בלמייקר).
+המינויים של רבקה רבינוביץ בחוג לארכיאולוגיה ותרבויות המזרח הקדום באוניברסיטה העברית, של לידר ספיר־חן בחוג לארכיאולוגיה ובמוזיאון לטבע על שם שטיינהרדט באוניברסיטת תל אביב ושל גיא בר־עוז בחוג לארכיאולוגיה באוניברסיטת חיפה הביאו להמשך הפיתוח של ההוראה וההכשרה בתחום הארכיאוזואולוגיה. כיום חברים במחלקה לארכיאולוגיה בחיפה שני ארכיאוזואולוגים נוספים: ראובן ישורון ונמרוד מרום. ברשות העתיקות הקימה לי פרי גל ענף לארכיאוזואולוגיה. בשנים האחרונות הקים כל אחד מהם קבוצות מחקר והעמיד דורות חדשים של סטודנטים ישראלים המתמחים במחקר הארכיאוזואולוגי במסגרת לימודיהם לתארים מתקדמים באוניברסיטאות המחקר בישראל. תלמידים אלו עובדים על מכלולים רבים של בעלי חיים מישראל ומתמחים במספר רב של שאלות מחקר הקשורות להיסטוריה הארכיאולוגית הארוכה של הארץ. 
+במקביל לקהילה המקומית ממשיכה מסורת המחקר הארכיאוזואולוגית להתבסס ולהתפתח בזכות מספר רב של חוקרים בעלי שם מהעולם שעבדו בארץ. בין החוקרים הבולטים שפעלו בארץ היו רנה ווֹפרה(René Vaufrey) שהיה סגן הקונסול הצרפתי ועבד על מאספי המאובנים מאום קטפה, ביורן קורטן (Bjorn Kurten) מפינלנד, שחקר את הטורפים של ישראל; ג'ולייט קלאטון-ברוק  (Juliet Clutton-Brock) מבריטניה, שעבדה על החומרים מהחפירות של קתלין קניון ביריחו וכתבה עבודות מפתח על ביות בעלי החיים באזור; ופייר דוקוס (Pierre Ducos) מצרפת, שעבד על מכלולי העצמות המרכזיים של ראשית הביות. בשנות ה־ 80 עבדו בארץ פול קרופט (Paul Croft)   מבריטניה,שעבד בלכיש ודו״ח העצמות שחיבר הוא אחד היסודיים והמקיפים שנכתבו בארץ; בראיין הסה (Brian Hesse) ופאולה וופניש (Paula Wapnish) מארצות הברית, שהניחו את היסודות לארכיאוזואולוגיה המקראית; וֶרה אייזנמן ( Vera Eisenmann) מצרפת, שהתמחתה בזיהוי סוסים; וביינבנידו מרטינז נבארו (Bienvenido Martínez Navarro) מספרד, שמתמחה בפריים. בשלושים השנים האחרונות עובד בארץ אדריאן ליסטר (Adrian Lister) מבריטניה, המתמחה בעצמות פילים. בחפירות המרכזיות של בר-יוסף עבדו איתו ג'ון ספת' (John Speth) על ניתוח הממצאים ממערת כבארה, מרי סטיינר (Mary Stiner) במערת היונים ונטלי מונרו (Natalie Munro) מארה"ב, שעובדת בארץ על מכלולים פרהיסטוריים נוספים. חוקרים בולטים נוספים שעבדו בארץ כוללים את קרוליין גריגסון (Caroline Grigson) מאנגליה, יחזקאל גרינפילד (Haskel Greenfield) מקנדה, סיימון דייוויס (Simon        Davis  ( מפורטוגל, סבינה גאודזינסקי (Sabine Gaudzinski-Windheuser) מגרמניה ולאסלו ברטוסביץ' (László Bartocewicz) מהונגריה. חוקרים אלו ורבים נוספים תרמו רבות לביסוס המחקר הארכיאוזואולוגי בישראל וסייעו להרחבת תחום המחקר וליצירת שיתופי פעולה בין-לאומייים.
+              </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+ © 2024 JERUS אפליקציוית מיפוי. כל הזכויות שמורות. 
+
+    </footer>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" id="modal-content">
+            <img id="modal-image" src="" alt="">
+            <p id="modal-text"></p>
+        </div>
+    </div>
+    <script>
+        function openModal(imageSrc, text) {
+            const modal = document.getElementById('myModal');
+            const modalImage = document.getElementById('modal-image');
+            const modalText = document.getElementById('modal-text');
+            
+            modalImage.src = imageSrc;
+            modalText.innerText = text;
+            modal.style.display = "flex";  // Changed to "flex" for centering
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+    </script>
+</body>
+</html>

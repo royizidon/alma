@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Species Data Table</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f4f4f4; color: #333; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        input[type="text"] { margin-bottom: 10px; padding: 10px; width: 20%; }
+    </style>
+</head>
+<body>
+
+<h2>Search by Species:</h2>
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for species...">
+
+<table class="dataframe" id="speciesTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Species</th>
+      <th>Number of Sites</th>
+      <th>Section</th>
+      <th>Average per site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><i>Acinonyx jubatus</i></td>
+      <td>1</td>
+      <td>Biblical</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Alcelaphus buselaphus</i></td>
+      <td>18</td>
+      <td>Prehistory, Biblical</td>
+      <td>6.4</td>
+    </tr>
+    <tr>
+      <td><i>Alcelaphus sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <td><i>Antelopini gen. et sp. indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <td><i>Apodemus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Bos indicus</i></td>
+      <td>7</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>3.7</td>
+    </tr>
+    <tr>
+      <td><i>Bos oldowayensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>39.0</td>
+    </tr>
+    <tr>
+      <td><i>Bos primigenius</i></td>
+      <td>59</td>
+      <td>Prehistory, Biblical</td>
+      <td>60.7</td>
+    </tr>
+    <tr>
+      <td><i>Bos sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>29.5</td>
+    </tr>
+    <tr>
+      <td><i>Bos taurus</i></td>
+      <td>294</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>118.7</td>
+    </tr>
+    <tr>
+      <td><i>Bovidae gen. et sp. indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <td><i>Bovini gen. et sp. indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <td><i>Camelus cf. thomasi</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td><i>Camelus dromedarius</i></td>
+      <td>80</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>12.9</td>
+    </tr>
+    <tr>
+      <td><i>Camelus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Canis aureus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td><i>Canis familiaris</i></td>
+      <td>145</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>13.7</td>
+    </tr>
+    <tr>
+      <td><i>Canis lupus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Canis mosbachensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <td><i>Canis sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td><i>Capra aegagrus</i></td>
+      <td>41</td>
+      <td>Prehistory, Biblical</td>
+      <td>80.8</td>
+    </tr>
+    <tr>
+      <td><i>Capra hircus</i></td>
+      <td>162</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>37.4</td>
+    </tr>
+    <tr>
+      <td><i>Capra ibex nubiana</i></td>
+      <td>6</td>
+      <td>Prehistory, Biblical, Classical</td>
+      <td>151.3</td>
+    </tr>
+    <tr>
+      <td><i>Capra sp.</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <td><i>Capreolus capreolus</i></td>
+      <td>50</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <td><i>Capreolus sp.</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>30.2</td>
+    </tr>
+    <tr>
+      <td><i>Cervidae</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>60.2</td>
+    </tr>
+    <tr>
+      <td><i>Cervus dama</i></td>
+      <td>53</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>12.7</td>
+    </tr>
+    <tr>
+      <td><i>Cervus elaphus</i></td>
+      <td>49</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>16.2</td>
+    </tr>
+    <tr>
+      <td><i>Cf. caracal caracal</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Cf. mellivora capensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Chionomys nivalis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td><i>Crocidura cf. suaveolens</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Crocuta crocuta</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>37.8</td>
+    </tr>
+    <tr>
+      <td><i>Crocuta hyaena</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td><i>Dama</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>618.0</td>
+    </tr>
+    <tr>
+      <td><i>Dama mesopotamica</i></td>
+      <td>135</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>38.6</td>
+    </tr>
+    <tr>
+      <td><i>Dicerhorinus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <td><i>Dicerorhinus hemitoechus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>24.7</td>
+    </tr>
+    <tr>
+      <td><i>Elephas sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus africanus</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>13.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus asinus</i></td>
+      <td>132</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>10.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus caballus</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>44.3</td>
+    </tr>
+    <tr>
+      <td><i>Equus caballus hydruntinus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus cabalus</i></td>
+      <td>38</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <td><i>Equus cf. melkiensis</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus ferus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>71.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus hemionus</i></td>
+      <td>10</td>
+      <td>Prehistory, Biblical</td>
+      <td>13.9</td>
+    </tr>
+    <tr>
+      <td><i>Equus hemionus asinus</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <td><i>Equus hyduntinus</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus sp.</i></td>
+      <td>7</td>
+      <td>Prehistory</td>
+      <td>19.5</td>
+    </tr>
+    <tr>
+      <td><i>Equus sp.1</i></td>
+      <td>106</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>15.2</td>
+    </tr>
+    <tr>
+      <td><i>Equus tabeti</i></td>
+      <td>3</td>
+      <td>Prehistory</td>
+      <td>126.7</td>
+    </tr>
+    <tr>
+      <td><i>Erinaceus concolor</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Erinaceus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Felidae indet.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td><i>Felis caracal</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td><i>Felis chaus</i></td>
+      <td>11</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>15.9</td>
+    </tr>
+    <tr>
+      <td><i>Felis sylvestris</i></td>
+      <td>35</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <td><i>Gallus galus</i></td>
+      <td>101</td>
+      <td>Biblical, Classical, Middle Ages</td>
+      <td>30.6</td>
+    </tr>
+    <tr>
+      <td><i>Gazella gazella</i></td>
+      <td>116</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>111.2</td>
+    </tr>
+    <tr>
+      <td><i>Gazelle sp.</i></td>
+      <td>98</td>
+      <td>Prehistory, Biblical, Classical, Middle Ages</td>
+      <td>70.5</td>
+    </tr>
+    <tr>
+      <td><i>Genetta genetta</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Gerbillus sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><i>Giraffa sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td><i>Herpestes icheumon</i></td>
+      <td>6</td>
+      <td>Prehistory</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <td><i>Herpestes sp.</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td><i>Hippopotamus amphibius</i></td>
+      <td>16</td>
+      <td>Prehistory, Biblical</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <td><i>Hippopotamus sp.</i></td>
+      <td>2</td>
+      <td>Prehistory</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td><i>Hyaena hyaena</i></td>
+      <td>1</td>
+      <td>Prehistory</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td><i>Hyaenidae indet.</i></td>
+      <td>4</td>
+      <td>Prehistory</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td><i>Hypolagus beremendensis</i></td>
+      <td>1</td>
+      <td
+

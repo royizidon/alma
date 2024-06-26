@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerus - Modeling and Mapping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .text-container {
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 4em;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <div class="name">Jerus</div>
+            <div class="tagline">The Modelling and Mapping Company</div>
+        </div>
+        <div class="image-container">
+            <img src="contour.jpg" alt="Contour Image" class="image">
+        </div>
+    </div>
+</body>
+</html>
