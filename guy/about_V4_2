@@ -87,30 +87,30 @@
             column-count: 3;
             column-gap: 20px; /* Adjust the gap between columns as needed */
         }
-        .images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            justify-items: center;
-            margin-top: 20px;
-        }
-        .image-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 5px solid #ddd; /* Adding a frame to the image */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adding a shadow for a more 3D effect */
-            border-radius: 10px; /* Optional: maintaining the rounded corners */
-        }
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the full image is displayed */
+    border: 5px solid #ddd; /* Adding a frame to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adding a shadow for a more 3D effect */
+    border-radius: 10px; /* Optional: maintaining the rounded corners */
+}
         .modal {
             display: none;
             position: fixed;
@@ -204,8 +204,8 @@
                 <div class="image-container" onclick="openModal('2.jpg', 'עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי (צילום: רועי שפיר)')">
                     <img src="2.jpg" alt="עצמות עז או כבש מארון הקודש של בית הכנסת הביזנטי בעין גדי">
                 </div>
-                <div class="image-container" onclick="openModal('3.jpg', 'עצמות בעלי חיים מאתרים ארכיאולוגיים: (א) במהלך החשיפה בחפירה ארכיאולוגית. בתמונה נראות שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון); (ב) במהלך הזיהוי והקִטלוג, לאחר שטיפה וניקוי, העצמות ממוינות לפי מין, חלק גוף וההקשר הארכיאולוגי שבו נתגלו (לפי שכבה ולפי מיקום הריבוע בחפירה) (צילום: גיא בר-עוז). ניתוח כמותי של פיזור העצמות מאפשר לזהות שינויים תקופתיים ומרחביים בדגמי הציד; (ג) במעבדה מסודרות ונארזות העצמות על פי מינים וחלקי שלד (צילום: גיא בר-עוז)')">
-                    <img src="3.jpg" alt="עצמות בעלי חיים מאתרים ארכיאולוגיים">
+                <div class="image-container" onclick="openModal('13.jpg', ' שברי גולגולת של אריה מנחל מחניים (צילום: גונן שרון).')">
+                    <img src="13.jpg" alt=" שברי גולגולת של אריה מנחל מחניים (צילום: גונן שרון).">
                 </div>
             </div>
         </div>
