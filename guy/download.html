@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Excel File</title>
-    <meta http-equiv="refresh" content="0; url=data.xlsx" />
+    <title>Automatic Download</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Create a new link element
+            var link = document.createElement('a');
+            link.href = 'data.xlsx'; // Path to your file
+            link.download = 'data.xlsx'; // Default file name for download
+
+            // Append the link to the body
+            document.body.appendChild(link);
+
+            // Programmatically click the link to trigger the download
+            link.click();
+
+            // Remove the link from the document
+            document.body.removeChild(link);
+        });
+    </script>
 </head>
 <body>
 </body>
