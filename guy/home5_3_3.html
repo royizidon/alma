@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אפליקציית מיפוי</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(135deg, #56ccf2, #2f80ed);
+            direction: rtl;
+            color: #ffffff;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 700px;
+            margin: 20px;
+            position: relative;
+        }
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px; /* Reduced padding to make it smaller */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 95%; /* Increased width */
+    max-width: 800px; /* Increased max width */
+    margin: 20px;
+    position: relative;
+}
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 .icon {
+            margin-left: 10px;
+            font-size: 0.8em;
+            color: #fff;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ddd;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background: linear-gradient(90deg, #43cea2, #185a9d);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #185a9d, #43cea2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn-bold {
+            font-size: 1.4em;
+            font-weight: bold;
+            padding: 20px 40px;
+        }
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .logos img {
+            height: 80px; /* Increased the height for larger logos */
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> ברוכים הבאים לפורטל הנתונים הארכיאוזואולוגים של ישראל <i class="fas fa-map-marker-alt icon"></i></h1>
+        <h2>מרכז אוניברסיטת חיפה - רשות העתיקות לתשתיות במדעי הארכיאולוגיה, השימור וארכיאולוגיה דיגיטלית</h2>
+        <a href="about_V4_2.html" class="btn" target="_blank">המחקר הארכיאוזואולוגי</a>
+
+        <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%9E%D7%A4%D7%AA-%D7%90%D7%AA%D7%A8%D7%99%D7%9D/?draft=true" class="btn" target="_blank">מפת אתרים</a>
+        <a href="https://experience.arcgis.com/experience/4a85127c01164dff90266046f5922a69/page/%D7%94%D7%A9%D7%95%D7%95%D7%90%D7%94-%D7%91%D7%99%D7%9F-%D7%9E%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%AA%D7%A7%D7%95%D7%A4%D7%95%D7%AA/?draft=true" class="btn" target="_blank">ניתוח מתקדם</a>
+    </div>
+    <div class="logos" >
+        <img src="mada.jpeg" alt="Logo 1" style="width: 200px;">
+        <img src="https://service.israntique.org.il/images/top_antiq_logo.svg" alt="Logo 1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Haifa_logo_official_apperence_dark_%28cropped%29.png" alt="Logo 2">
+        <img src="https://conservation.haifa.ac.il/images/samc_logo.png" alt="Logo 3">
+<img src="לוגו מעבדה 2014.jpg" alt="logo 4" style="width: 180px;">
+
+    </div>
+    <footer>
+        &copy; 2024 JERUS אפליקציוית מיפוי. כל הזכויות שמורות.
+    </footer>
+</body>
+</html>

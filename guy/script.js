@@ -24,3 +24,4 @@ document.getElementById('queryForm').addEventListener('submit', async function(e
         responseDiv.innerHTML = '<p>No PDF generated.</p>';
     }
 });
+               
