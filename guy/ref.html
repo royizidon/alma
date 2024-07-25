@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automatic Download</title>
@@ -9,8 +8,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Create a new link element
             var link = document.createElement('a');
-            link.href = 'references.csv'; // Path to your file
-            link.download = 'references.csv'; // Default file name for download
+            link.href = 'References.csv'; // Path to your file
+            link.download = 'References.csv'; // Default file name for download
 
             // Append the link to the body
             document.body.appendChild(link);
@@ -21,37 +20,6 @@
             // Remove the link from the document
             document.body.removeChild(link);
         });
-
-        function openSmallWindow() {
-            // Specify the dimensions and features of the new window
-            var width = 400;
-            var height = 200;
-            var left = (screen.width / 2) - (width / 2);
-            var top = (screen.height / 2) - (height / 2);
-            var windowFeatures = "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left;
-
-            // Open a new window
-            var newWindow = window.open('', 'DownloadWindow', windowFeatures);
-
-            // Create a new link element in the new window
-            var link = newWindow.document.createElement('a');
-            link.href = 'data.xlsx'; // Path to your file
-            link.download = 'data.xlsx'; // Default file name for download
-
-            // Append the link to the new window's body
-            newWindow.document.body.appendChild(link);
-
-            // Programmatically click the link to trigger the download
-            link.click();
-
-            // Close the new window after the download starts
-            newWindow.setTimeout(function() {
-                newWindow.close();
-            }, 1000);
-        }                 
-
-        // Open the small window when the page loads
-        window.onload = openSmallWindow;
     </script>
 </head>
 <body>
