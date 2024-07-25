@@ -6,19 +6,31 @@
     <title>Automatic Download</title>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Create a new link element
-            var link = document.createElement('a');
-            link.href = 'References.csv'; // Path to your file
-            link.download = 'References.csv'; // Default file name for download
+            // Display a message to the user
+            var message = document.createElement('p');
+            message.textContent = 'Downloading references file...';
+            document.body.appendChild(message);
 
-            // Append the link to the body
-            document.body.appendChild(link);
+            try {
+                // Create a new link element
+                var link = document.createElement('a');
+                link.href = 'References.csv'; // Path to your file
+                link.download = 'References.csv'; // Default file name for download
 
-            // Programmatically click the link to trigger the download
-            link.click();
+                // Append the link to the body
+                document.body.appendChild(link);
 
-            // Remove the link from the document
-            document.body.removeChild(link);
+                // Programmatically click the link to trigger the download
+                link.click();
+
+                // Remove the link from the document
+                document.body.removeChild(link);
+
+                console.log('Download triggered successfully');
+            } catch (error) {
+                console.error('Error triggering download:', error);
+                message.textContent = 'Failed to download the references file.';
+            }
         });
     </script>
 </head>
