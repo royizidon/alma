@@ -117,12 +117,12 @@
     	    border: none; /* Ensure there is no border around the image */
         }
 .image-container img.smaller-height {
-    max-height: 500px; /* Set the desired max height */
-    width: auto; /* Maintain aspect ratio by setting width to auto */
+    max-height: 550px; /* Set the desired max height */
+    Width:300; /* Maintain aspect ratio by setting width to auto */
 }
 .image-row {
     display: flex;
-    justify-content: space-between; /* Space the images evenly */
+	justify-content: center;
     flex-wrap: wrap; /* Allow wrapping to handle small screens */
 }
 
@@ -139,14 +139,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px; /* Optional: maintaining the rounded corners */
 }>
+.image-row.two .image-container {
+    flex: 1; /* Allow the image container to grow and fill space */
+    max-width: 45%; /* Ensure the images are not too wide */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
 
-        .image-container p {
-            margin: 15px 0 20px 0;
-            font-size: 1.1em;
-            color: #333;
-            font-weight: bold;
-        }
-
+.bold-text, .image-container p {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center; /* Center the text */
+    margin: 15px 0 20px 0; /* Add some space above and below the paragraph */
+}
     </style>
 </head>
 <body>
@@ -183,7 +188,8 @@
             <div class="images">
                 <div class="image-container">
                     <img src="1.jpg" >
-                    <p> קבורה פולחנית של חמור. תל הרור (צפון הנגב), תקופת הברונזה התיכונה (אמצע האלף ה-2 לפסה"נ) (צילום: גיא בר-עוז)
+                    <p> קבורה פולחנית של חמור. תל הרור (צפון הנגב),
+<br> תקופת הברונזה התיכונה (אמצע האלף ה-2 לפסה"נ) (צילום: גיא בר-עוז)
 </p>
                 </div>
                 <div class="image-container">
@@ -197,7 +203,7 @@
             
 <div class="image-container">
                     <img src="20.jpg" >
-                    <p>  שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון). </p>
+                    <p>  שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית <br> שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון). </p>
                 </div>
             
 
@@ -218,7 +224,7 @@
                 <div class="images1">
                     <div class="image-container">  
                         <img src="10.jpg">
-			<p>  הופעה/הכחדה של מיני חיות הבית וחיות הבר  עשב וטורפים בין   סוף תקופת הפלייסטוקן להיום
+			<p>  הופעה/הכחדה של מיני חיות הבית וחיות הבר  עשב <br> וטורפים בין   סוף תקופת הפלייסטוקן להיום
  (מתוך בר-עוז ווייסברוד
 2016)
 
@@ -245,10 +251,23 @@
     <div class="image-container">
         <img src="12a.jpg"  class="smaller-height">
     </div>
-<p>
+<p class="bold-text">
  					תפוצת האתרים מתקופת ההולוקן, שבהם התגלו עצמות היפופוטמים, שור הבר ובובל. (מתוך יום-טוב ובר-עוז 2022, לפי Tsahar et al. 2009).			
 </p>           
 </div>
+
+<div class="image-row two">
+    <div class="image-container">
+        <img src="14a.jpg" class="smaller-height" alt="Image 14a">
+    </div>
+    <div class="image-container">
+        <img src="14b.jpg" class="smaller-height" alt="Image 14b">
+    </div>
+</div>
+<p class="bold-text">
+    אתרים מתקופת ההולוקן, בהם נמצאו שרידי אריות ודב (מתוך יום-טוב ובר-עוז 2022, לפי Tsahar et al. 2009).
+</p>
+
 
 
       
