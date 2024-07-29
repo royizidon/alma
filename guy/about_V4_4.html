@@ -5,124 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>חקר הארכיאולוגיה בישראל</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            direction: rtl;
-            text-align: center;
-        }
-        header {
-            background: linear-gradient(135deg, #56ccf2, #2f80ed);
-            color: white;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #fff;
-        }
-        h1 a {
-            color: inherit;
-            text-decoration: none;
-        }
-        .header-button {
-            background-color: #fff;
-            color: #2f80ed;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-left: 20px;
-        }
-        .header-button a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        .text {
-            padding: 20px;
-        }
-        h2 {
-            font-size: 1.5em;
-            color: #337ab7;
-            margin-bottom: 10px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        h2::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background-color: #337ab7;
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-        }
-        p.multi-column {
-            column-count: 3;
-            column-gap: 20px;
-        }
-        .images {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            justify-items: center;
-            margin-top: 30px;
-        }
-        .images1 {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            justify-items: center;
-            margin-top: 50px;
-        }
-        .image-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-        }
-        .image-container img {
-            width: 85%;
-            height: auto;
-            object-fit: contain;
-            border: 5px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-            border-radius: 10px;
-    	    border: none; /* Ensure there is no border around the image */
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    direction: rtl;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(135deg, #56ccf2, #2f80ed);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #fff;
+}
+
+h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-button {
+    background-color: #fff;
+    color: #2f80ed;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.header-button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.text {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #337ab7;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #337ab7;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+p.multi-column {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.images1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-items: center;
+    margin-top: 50px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    margin: 10px; /* Add some space around each image */
+}
+
+.image-container img {
+    width: 85%;
+    height: auto;
+    object-fit: contain;
+    border: 5px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    border: none; /* Ensure there is no border around the image */
+}
+
 .image-container img.smaller-height {
     max-height: 550px; /* Set the desired max height */
-    Width:300; /* Maintain aspect ratio by setting width to auto */
+    width: 300px; /* Maintain aspect ratio by setting width */
 }
+
+.image-container img.smaller-image {
+    width: 70%; /* Adjust this value to make the specific image smaller */
+    height: auto;
+    object-fit: contain;
+}
+
 .image-row {
     display: flex;
-	justify-content: center;
+    justify-content: center;
     flex-wrap: wrap; /* Allow wrapping to handle small screens */
 }
 
@@ -131,14 +156,7 @@
     max-width: 30%; /* Ensure the images are not too wide */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-<!
-.image-container img {
-    width: auto; /* Adjust to keep the aspect ratio */
-    max-height: 400px; /* Adjust the height as needed */
-    object-fit: contain;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Optional: maintaining the rounded corners */
-}>
+
 .image-row.two .image-container {
     flex: 1; /* Allow the image container to grow and fill space */
     max-width: 45%; /* Ensure the images are not too wide */
@@ -154,15 +172,11 @@
 }
 
 
-.image-container img.smaller-image {
-    width: 70%; /* Adjust this value to make the specific image smaller */
-    height: auto;
-    object-fit: contain;
-}
-
     </style>
 </head>
 <body>
+
+
     <header>
         <h1><a href="https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%9B%D7%90%D7%95%D7%96%D7%95%D7%90%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%94" target="_blank">חקר הארכיאוזואולוגיה בישראל</a></h1>
         <button class="header-button">
