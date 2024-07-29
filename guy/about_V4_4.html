@@ -116,6 +116,21 @@
             border-radius: 10px;
     	    border: none; /* Ensure there is no border around the image */
         }
+.image-container img.smaller-height {
+    max-height: 500px; /* Set the desired max height */
+    width: auto; /* Maintain aspect ratio by setting width to auto */
+}
+.image-row {
+    display: flex;
+    justify-content: space-between; /* Space the images evenly */
+    flex-wrap: wrap; /* Allow wrapping to handle small screens */
+}
+
+.image-row .image-container {
+    flex: 1; /* Allow the image container to grow and fill space */
+    max-width: 30%; /* Ensure the images are not too wide */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
 <!
 .image-container img {
     width: auto; /* Adjust to keep the aspect ratio */
@@ -182,7 +197,7 @@
             
 <div class="image-container">
                     <img src="20.jpg" >
-                    <p> בתמונה נראות שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון). </p>
+                    <p>  שתי קרני צבי בזמן גילויין באתר של התרבות הנטופית שבטראסת מערת הנחל (אל־וואד) בנחל המערות (צילום: ראובן ישורון). </p>
                 </div>
             
 
@@ -211,12 +226,32 @@
                     </div>
                     <div class="image-container"> 
                         <img src="11.jpg">
+                  
 <p>
- 					נתוני מסת הגוף של מיני יונקים אוכלי עשב וטורפים שנכחדו מנופי הארץ ב־ 20,000 השנים האחרונות, מאז סוף תקופת הקרח האחרונה, מוצגים על ציר הזמן (מתוך
- בר-עוז, מלקינסון ונדל 2024)				
-</p>                    
+נתוני מסת הגוף של מיני יונקים אוכלי עשב וטורפים שנכחדו מנופי הארץ ב־ 20,000 השנים האחרונות
+)מאז סוף תקופת הקרח האחרונה), מוצגים על ציר הזמן (מתוך בר-עוז, מלקינסון ונדל 2024)
+</p>
 </div>
-            
+      
+
+
+<div class="image-row">
+    <div class="image-container">
+        <img src="12.jpg" class="smaller-height">
+    </div>
+    <div class="image-container">
+        <img src="12b.jpg" class="smaller-height">
+    </div>
+    <div class="image-container">
+        <img src="12a.jpg"  class="smaller-height">
+    </div>
+<p>
+ 					תפוצת האתרים מתקופת ההולוקן, שבהם התגלו עצמות היפופוטמים, שור הבר ובובל. (מתוך יום-טוב ובר-עוז 2022, לפי Tsahar et al. 2009).			
+</p>           
+</div>
+
+
+      
                 </div>
             </div>
         </div>
